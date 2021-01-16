@@ -1,0 +1,7 @@
+import requests
+from bs4 import BeautifulSoup
+
+source = requests.get("https://programmers.co.kr/learn/challenges").text
+soup = BeautifulSoup(source, "html.parser")
+myname=soup.select("h5.card-title")
+print(myname)
